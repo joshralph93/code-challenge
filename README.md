@@ -1,3 +1,26 @@
+# Instructions for Reviewer
+
+Run the following commands to build the docker image and install composer dependencies
+
+```
+docker build . -t howsy-code-challenge
+```
+```
+docker run -it -v $(pwd):/app -w /app howsy-code-challenge composer install
+```
+
+Running the test suite
+
+```
+docker run -it -v $(pwd):/app -w /app howsy-code-challenge vendor/bin/phpunit
+```
+
+Running the simple CLI example
+
+```
+docker run -it -v $(pwd):/app -w /app howsy-code-challenge php example.php
+```
+
 # Howsy Software Engineer Code Challenge
 
 This test allows you to demonstrate the skills that will be required as a Software Developer at Howsy. We primarily use PHP at Howsy and would prefer submissions in this format however we will accept submissions in other OOP languages (Java, Python, Ruby) *but please note, day-to-day you will probably be writing PHP*
